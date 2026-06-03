@@ -12,8 +12,7 @@ class ProdutoController extends Controller
         return view('produtos.index', compact('produtos'));
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $dados = $request->validate([
             'nome' => 'required|min:3',
             'preco' => 'required|numeric|min:0',
