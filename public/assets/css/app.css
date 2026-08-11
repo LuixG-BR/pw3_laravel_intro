@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f7fb;
-    color: #1f2937
+    color: #1f2937;
 }
 
 .container {
@@ -15,8 +15,8 @@ body {
 }
 
 .site-header {
-    background: #1f2937;
-    color: #fff;
+    background: #0f172a;
+    color: #ffffff;
     padding: 16px 0;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .site-header a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     margin-left: 12px;
 }
@@ -39,8 +39,8 @@ main {
 }
 
 .site-footer {
-    background: #1e2227;
-    color: #fff;
+    background: #0f172a;
+    color: #ffffff;
     text-align: center;
     padding: 18px 0;
 }
