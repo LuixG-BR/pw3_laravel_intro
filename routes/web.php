@@ -7,14 +7,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::view('/admin', 'admin.dashboard');
+
 Route::get('/produtos', [ProdutoController::class, 'index']);
 Route::post('/produtos', [ProdutoController::class, 'store']);
 
 Route::get('/teste-orm', function() {
     User::create([
-        'name' => 'Ana Clara Santos',
-        'email' => 'ana.santos@escola.sp.gov.br',
-        'password' => '12345678'
+        'name' => 'Luis',
+        'email' => 'luis@escola.sp.gov.br',
+        'password' => '12345'
     ]);
 
     return User::all();
