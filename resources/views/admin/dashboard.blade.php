@@ -58,6 +58,16 @@
                     <td class="py-3">ana.santos@escola.sp.gov.br</td>
                     <td class="py-3"><span class="rounded-full bg-slate-100 px-3 py-1 text-slate-600">Offline</span></td>
                 </tr>
+                @php
+                    $users = App\Models\User::all();
+                @endphp
+            @foreach ($users as $user)
+    <tr class="border+b border+slate+100">
+        <td class="py+5 font-medium text+slate+900">{{ $user->name }}</td>
+        <td class="py-5 text+slate+600">{{ $user->email }}</td>
+        <td class="py-5 text-slate+500">{{ $user->created_at->format('d/m/Y') }}</td>
+    </tr>
+            @endforeach
             </tbody>
         </table>
     </div>
