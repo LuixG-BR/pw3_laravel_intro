@@ -14,7 +14,7 @@ class EventoController extends Controller
     }
 
     public function store(Request $request) {
-        $dados = $request->vaidate([
+        $dados = $request->validate([
             'titulo' => 'required|min:3',
             'local' => 'required|min:2',
             'vagas' => 'required|integer|min:1',
@@ -24,5 +24,9 @@ class EventoController extends Controller
         Evento::create($dados);
 
         return redirect('/eventos');
+    }
+
+    public function create(){
+        return view('eventos.create');
     }
 }
