@@ -7,10 +7,20 @@ use Illuminate\Http\Request;
 
 class EventoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $eventos = Evento::orderBy('tiutlo')->get();
-        return view('eventos.index', compact('eventos'));
+        $busca = $request->input('busca');
+
+        if ($busca) {
+            $eventos = Evento::where('titulo', 'like', "%{$busca}%", 'and')
+                ->orderBy('tiutlo', 'asc')
+                ->get();
+        } else {
+            $eventos = Evento::orderBy('tiutlo', 'asc')->get();
+        }
+
+        // Retorna a view do painel passando a coleção de usuários e o termo pesquisado
+        return view('eventos.index', compact('eventos', 'busca'));
     }
 
     public function store(Request $request) {
