@@ -3,6 +3,7 @@
 use App\Http\Controllers\EventoController;
 use App\Models\User;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,3 +28,13 @@ Route::get('/teste-orm', function() {
 
     return User::all();
 });
+
+Route::get('/admin', [UserController::class, 'index']);
+
+// Rotas de criação
+Route::get('/usuarios/novo', [UserController::class, 'create']);
+Route::get('/usuarios', [UserController::class, 'save']);
+
+// Rotas de edição e atualização
+Route::get('/usuarios/{id}/editar', [UserController::class, 'edit']);
+Route::patch('/usuarios/{id}', [UserController::class, 'update']);
